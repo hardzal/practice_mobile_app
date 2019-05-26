@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".indonesia.tpm.ui.main.MainActivity">
+
+    <TextView
+        android:id="@+id/tv_main_nama"
+        android:layout_width="170dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="bottom"
+        android:text="Nama Lengkap"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_main_alamat"
+        android:layout_width="170dp"
+        android:layout_height="49dp"
+        android:layout_below="@id/tv_main_nama"
+        android:layout_marginBottom="4dp"
+        android:gravity="bottom"
+        android:text="Alamat"
+        android:textSize="28sp"/>
+
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv_main_nama"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/et_alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_main_nama"
+        android:layout_toRightOf="@id/tv_main_alamat"/>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Kirim"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc_main"
+            android:background="@android:color/holo_blue_dark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_submit"
+            android:layout_below="@id/tv_main_alamat"
+            >
+        </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
