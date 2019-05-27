@@ -6,16 +6,16 @@ import com.google.gson.annotations.SerializedName;
 public class GetResponse{
 
 	@SerializedName("data")
-	private List<DataItem> data;
+	private List<DataItems> data;
 
 	@SerializedName("errors")
 	private Object errors;
 
-	public void setData(List<DataItem> data){
+	public void setData(List<DataItems> data){
 		this.data = data;
 	}
 
-	public List<DataItem> getData(){
+	public List<DataItems> getData(){
 		return data;
 	}
 
@@ -30,7 +30,7 @@ public class GetResponse{
 	@Override
  	public String toString(){
 		return 
-			"GetResponse{" + 
+			"GetResponseById{" +
 			"data = '" + data + '\'' + 
 			",errors = '" + errors + '\'' + 
 			"}";

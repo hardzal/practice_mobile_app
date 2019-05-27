@@ -2,7 +2,7 @@ package com.example.modul8.tpm.model.get;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DataItem{
+public class DataItems {
 
 	@SerializedName("updated_at")
 	private String updatedAt;
@@ -62,7 +62,7 @@ public class DataItem{
 	@Override
  	public String toString(){
 		return 
-			"Data{" +
+			"DataItem{" +
 			"updated_at = '" + updatedAt + '\'' + 
 			",name = '" + name + '\'' + 
 			",description = '" + description + '\'' + 

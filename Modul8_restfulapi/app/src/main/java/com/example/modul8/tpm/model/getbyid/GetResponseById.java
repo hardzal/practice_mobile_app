@@ -1,21 +1,23 @@
-package com.example.modul8.tpm.model.post;
+package com.example.modul8.tpm.model.getbyid;
 
 import com.google.gson.annotations.SerializedName;
 
-public class PostResponse{
+import java.util.List;
 
-	@SerializedName("dataItem")
-	private DataItem dataItem;
+public class GetResponseById {
+
+	@SerializedName("data")
+	private DataItem data;
 
 	@SerializedName("errors")
 	private Object errors;
 
-	public void setDataItem(DataItem dataItem){
-		this.dataItem = dataItem;
+	public void setData(DataItem data){
+		this.data = data;
 	}
 
-	public DataItem getDataItem(){
-		return dataItem;
+	public DataItem getData(){
+		return data;
 	}
 
 	public void setErrors(Object errors){
@@ -29,8 +31,8 @@ public class PostResponse{
 	@Override
  	public String toString(){
 		return 
-			"PostResponse{" + 
-			"dataItem = '" + dataItem + '\'' +
+			"GetResponseById{" +
+			"data = '" + data + '\'' + 
 			",errors = '" + errors + '\'' + 
 			"}";
 		}

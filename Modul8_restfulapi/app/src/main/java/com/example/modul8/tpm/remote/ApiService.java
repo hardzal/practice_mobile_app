@@ -1,6 +1,7 @@
 package com.example.modul8.tpm.remote;
 
 import com.example.modul8.tpm.model.get.GetResponse;
+import com.example.modul8.tpm.model.getbyid.GetResponseById;
 import com.example.modul8.tpm.model.post.PostResponse;
 import com.google.gson.JsonObject;
 
@@ -21,9 +22,14 @@ public interface ApiService {
     @GET("/items")
     Call<GetResponse> getAllItems();
 
+    @GET("/items/{id}")
+    Call<GetResponseById> getItemById(@Path("id") String id);
+
     @FormUrlEncoded
     @PUT("/items/{id}")
-    Call<JsonObject> updateDataItems(@Path("id") String id, @Field("name") String name, @Field("description") String description);
+    Call<JsonObject> updateDataItems(@Path("id") String id,
+                                     @Field("name") String name,
+                                     @Field("description") String description);
 
     @DELETE("/items/{id}")
     Call<JsonObject> deleteDataItems(@Path("id") String id);

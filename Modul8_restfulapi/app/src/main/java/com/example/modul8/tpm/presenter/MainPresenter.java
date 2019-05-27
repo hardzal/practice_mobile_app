@@ -1,6 +1,9 @@
 package com.example.modul8.tpm.presenter;
 
+import android.util.Log;
+
 import com.example.modul8.tpm.model.get.GetResponse;
+import com.example.modul8.tpm.model.getbyid.GetResponseById;
 import com.example.modul8.tpm.model.post.PostResponse;
 import com.example.modul8.tpm.remote.BaseApp;
 import com.google.gson.JsonObject;
@@ -22,7 +25,7 @@ public class MainPresenter implements MainInterface {
             @Override
             public void onResponse(Call<GetResponse> call, Response<GetResponse> response) {
                 if(response.isSuccessful()) {
-                    mainView.getSucces(response.body());
+                    mainView.getSuccess(response.body());
                 } else {
                     mainView.onError(response.message());
                 }
@@ -30,6 +33,26 @@ public class MainPresenter implements MainInterface {
 
             @Override
             public void onFailure(Call<GetResponse> call, Throwable t) {
+                mainView.onFailure(t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void getItemById(String id) {
+        BaseApp.service.getItemById(id).enqueue(new Callback<GetResponseById>() {
+            @Override
+            public void onResponse(Call<GetResponseById> call, Response<GetResponseById> response) {
+                if(response.isSuccessful()) {
+                    Log.d("HASIL PERTAMA :", String.valueOf(response.body()));
+                    mainView.getSuccessById(response.body());
+                } else {
+                    mainView.onError(response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GetResponseById> call, Throwable t) {
                 mainView.onFailure(t.getMessage());
             }
         });

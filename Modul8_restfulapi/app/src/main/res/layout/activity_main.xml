@@ -6,8 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".tpm.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/black"
+        android:text="Muhammad Rizal || 123170036"
+        android:id="@+id/created"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/created"
+        android:inputType="number"
+        app:iconifiedByDefault="true"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        app:defaultQueryHint="Search by id...refresh click 2x--->">
+    </android.support.v7.widget.SearchView>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_items"
+        android:layout_below="@id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
