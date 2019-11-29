@@ -6,30 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".tpm.MainActivity">
 
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_bar"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:iconifiedByDefault="true"
+        android:layout_margin="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        app:defaultQueryHint="Search by id...click 2x--->">
+    </android.support.v7.widget.SearchView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textColor="@android:color/black"
-        android:text="Muhammad Rizal || 123170036"
+        android:layout_below="@id/search_bar"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_marginBottom="0dp"
+        android:textColor="@android:color/white"
+        android:text="@string/_123170036_muhammad_rizal"
         android:id="@+id/created"
         android:textStyle="bold"
+        android:textSize="10sp"
         android:textAlignment="center"/>
-    <android.support.v7.widget.SearchView
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/created"
-        android:inputType="number"
-        app:iconifiedByDefault="true"
-        android:layout_margin="10dp"
-        android:layout_marginBottom="10dp"
-        app:defaultQueryHint="Search by id...refresh click 2x--->">
-    </android.support.v7.widget.SearchView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_items"
-        android:layout_below="@id/search_bar"
+        android:layout_below="@id/created"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
